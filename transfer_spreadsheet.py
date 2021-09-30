@@ -1,8 +1,11 @@
+import sys
 import pandas as pd
 from datetime import datetime
 
-additions = pd.read_excel(open('test_input.xlsx', 'rb'), sheet_name='Additions')
-removals = pd.read_excel(open('test_input.xlsx', 'rb'), sheet_name='Removals')
+
+
+additions = pd.read_excel(open(sys.argv[1], 'rb'), sheet_name='Additions')
+removals = pd.read_excel(open(sys.argv[1], 'rb'), sheet_name='Removals')
 
 additions_df = pd.DataFrame(data=additions)
 removals_df = pd.DataFrame(data=removals)
